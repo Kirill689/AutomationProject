@@ -18,7 +18,7 @@ public class SendLetterTest {
     private String password;
     private String contactAddress;
 
-
+    //Set up the environment before every test
     @Before
     public void setUpBeforeTestMethod (){
 
@@ -42,10 +42,9 @@ public class SendLetterTest {
 
         WebDriverWait await = new WebDriverWait(webDriver,7);
         await.until(ExpectedConditions.presenceOfElementLocated(userEmailPageObject.getWriteLetterButtonXpath()));
-
-
     }
 
+    //Check the state of letter form fields
     @Test
     public void contentBoxComponentsIsEnabledTest () {
 
@@ -58,6 +57,7 @@ public class SendLetterTest {
 
     }
 
+    //Send letter to myself
     @Test
     public void sendLetterTest (){
         userEmailPageObject.writeLetterButtonClick();
